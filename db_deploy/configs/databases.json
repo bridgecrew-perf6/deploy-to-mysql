@@ -1,0 +1,12 @@
+{
+  "databases": [
+    {
+      "name": "REF_PRICE_090",
+      "cluster": "01"
+    },
+    {
+      "name": "REF_PRICE_091",
+      "cluster": "01"
+    }
+  ]
+}

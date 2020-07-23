@@ -1,0 +1,6 @@
+{
+  "local": "databases.json",
+  "dev": "databases_dev.json",
+  "exe": "databases_exe.json",
+  "prod": "databases_prod.json"
+}
