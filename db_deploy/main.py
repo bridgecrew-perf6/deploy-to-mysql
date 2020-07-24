@@ -1,13 +1,22 @@
-import utils
+import common_utils
 import executor
+import constants
 
-configs = utils.read_json('run_configs.json')
-env = configs.get('ENV')
+configs = common_utils.read_json(constants.RUN_CONFIGURATIONS)
+env = configs.get(constants.ENV)
 
-print('Environment - %s' % env)
-# TODO: Get user confirmation
+if env not in constants.VALID_ENV:
+    print('Environment - %s is not valid' % env)
+else:
+    print('Environment - %s' % env)
+    print('Host - %s' % common_utils.get_cluster_data(env))
+    print('Configurations -%s' % common_utils.read_json(constants.RUN_CONFIGURATIONS))
+    user_env = input("Do you want to proceed? If yes, type the ENV\n")
 
-if configs.get('INIT_ALL_DB'):
-    executor.init_all_dbs(env)
-
-# TODO: Execute Custom query in all DBs
+    if user_env == env:
+        if configs.get(constants.INIT_ALL_DB):
+            executor.init_all_dbs(env)
+        if configs.get(constants.CUSTOM_QUERY):
+            executor.execute_custom_queries(env)
+    else:
+        print('Environment mismatch, exiting..')
