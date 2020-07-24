@@ -6,6 +6,11 @@ This python module is compatible with python 3.6
 1. Setup python3 environment
 2. Install pip
 ```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+```
+Install virtual environment and dependencies 
+```
 virtualenv venv
 pip install -r requirements
 ```
