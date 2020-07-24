@@ -14,6 +14,7 @@ def init_all_dbs(env):
             uname, psswd = constants.LOCAL_USERNAME, constants.LOCAL_PASSWORD
         else:
             uname, psswd = aws_utils.get_credentials(env, cluster)
+            print(uname, psswd)
         db_con = mysql_connector.get_mysql_connection(uname, psswd, host)
         mysql_connector.create_db(db_con, db_name)
         db_con.close()

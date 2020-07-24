@@ -41,3 +41,6 @@ RUN_CONFIGURATIONS = 'run_configs.json'
 CUSTOM_QUERY_PATH = 'custom_query/custom_query.sql'
 
 AVOID_SCRIPTS = ['DROP', 'TRUNCATE', 'DELETE', 'PURGE', 'SELECT']
+
+LOG_GROUP = 'cp-ref-price-db-deploy'
+LOG_STREAM = 'cp-ref-db-deploy-log-stream'
